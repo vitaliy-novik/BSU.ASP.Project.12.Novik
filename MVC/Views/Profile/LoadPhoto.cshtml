@@ -1,0 +1,37 @@
+﻿@model MVC.Models.LoadPhotoModel
+
+@{
+    ViewBag.Title = "LoadPhoto";
+}
+
+<h2>LoadPhoto</h2>
+
+@using (Html.BeginForm("LoadPhoto", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Load Image</legend>
+
+        <div class="editor-label">Description</div>
+        <div class="form-control">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">Файл изображения</div>
+        <div class="editor-field">
+            <input type="file" multiple="multiple" name="files" />
+        </div>
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
