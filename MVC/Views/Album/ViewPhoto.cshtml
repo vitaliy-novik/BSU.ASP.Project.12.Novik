@@ -7,9 +7,10 @@
         <figcaption>
             @if (!ViewBag.IsMy)
             {
-                @Html.ActionLink("Nice:" + Model.likesNumber, "AddLike", "Album", new { id = Model.Id }, new { @class = "btn btn-sm", @id = "like" });
+                @Html.ActionLink("Nice:", "AddLike", "Album", new { id = Model.Id }, new { @class = "btn btn-sm", @id = "like" });
 
             }
+            @Model.likesNumber
             @Model.LoadDate.ToShortDateString() |
             @Model.Description
         </figcaption>
