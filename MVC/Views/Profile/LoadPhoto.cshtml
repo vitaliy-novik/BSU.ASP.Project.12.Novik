@@ -10,8 +10,6 @@
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Load Image</legend>
-
         <div class="editor-label">Description</div>
         <div class="form-control">
             @Html.EditorFor(model => model.Description)
@@ -19,18 +17,16 @@
         </div>
 
         <div class="editor-label">File</div>
-        <div class="editor-field">
-            <input type="file" multiple="multiple" name="files" />
-        </div>
+        <input type="file" multiple="multiple" name="files" />
 
         <p>
-            <input type="submit" value="Submit" class="btn btn-default"/>
+            <input type="submit" value="Submit" class="btn btn-default" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back", "Index", "Album")
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
